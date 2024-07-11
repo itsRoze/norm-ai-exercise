@@ -16,19 +16,19 @@ pnpm dev
 
 ## High-level Overview
 
-The front end view allows a compliance analyst to be able to
+The frontend view allows a compliance analyst to:
 
-1. Quickly see whether a document is failing or passing compliance
-2. Identify the checks that are failing
-3. Drill into document structure of the checks,
-4. Ignore/resolve any failing checks (visual, but not funcational)
+1. Quickly see whether a document is failing or passing compliance.
+2. Identify the checks that are failing.
+3. Drill into the document structure of the checks.
+4. Ignore/resolve any failing checks (visual, but not functional).
 
 ### Assumptions/Rationale
 
 - Since analysts are busy, the most important UI/UX aspect is to know whether a document passes compliance or not. This is achieved through the heading displaying the result and colors indicating failing status.
-- Since analysts are detailed and thorough, it is beneficial to reduce noise. This is achieved by allowing analysts to collapse and expand sections of a document and the compliance checks as neccessary
-- Since analysts are responsible for any issues in compliance, they need to know what checks are failing (hence the left panel that displays failing checks) and an ability to act on them (hence the ignore/resolve buttons). The ignore/resolve functionality is visual only due to the scope of the objective and research required to implement it properly
-- Since analysts have low familiarity with AI-driven products, language must remain straightforward and CTA should be clear
+- Since analysts are detailed and thorough, it is beneficial to reduce noise. This is achieved by allowing analysts to collapse and expand sections of a document and the compliance checks as necessary.
+- Since analysts are responsible for any issues in compliance, they need to know what checks are failing (hence the left panel that displays failing checks) and have the ability to act on them (hence the ignore/resolve buttons). The ignore/resolve functionality is visual only due to the scope of the objective and research required to implement it properly.
+- Since analysts have low familiarity with AI-driven products, language must remain straightforward and CTAs should be clear.
 
 ## Technical Implementation
 
@@ -38,7 +38,7 @@ This was bootstrapped using the [T3 Stack](https://create.t3.gg/) which configur
 - [Tailwind CSS](https://tailwindcss.com): CSS utility classes
 - [tRPC](https://trpc.io): Typesafe APIs
 
-The benefits are that this saved time in terms of configuration and had some small performance benefits. In a real-world application, depending on requirements/scope, I may have considered other options such as [Remix](https://remix.run/) for data/route coupling or even options outside React such as [Solid](https://www.solidjs.com/) for performance gains. Additionally, depending on the size of documents, it may be beneficial to go with a local-first approach and use a library like [Replicache](https://replicache.dev/).
+The benefits are that this saved time in terms of configuration and had some small performance benefits. In a real-world application, depending on requirements/scope, I may have considered other options such as [Remix](https://remix.run/) for data/route coupling or even options outside React such as [Solid](https://www.solidjs.com/) for performance gains. Additionally, depending on the size of the documents, it may be beneficial to go with a local-first approach and use a library like [Replicache](https://replicache.dev/).
 
 Additionally used the [Shadcn](https://ui.shadcn.com/) UI library for accessible components
 
@@ -50,14 +50,14 @@ Resources used
 
 ## Considered, But Not Implemented
 
-- Ignore and resolve functionality. Analysts are responsible for complicance issues so they need to be able to act on ducments in review. This could include being able to add comments, modify the document, etc. Due to a conservative scope on the objective and time consideration, this was not implemented but certain pieces were visualized.
-- Once checks are ignored or resolved, their should be some approval process. This means some documents may be in a status of _Review_ meaning acting on any failed checks or in a status of _Needing Approval_ for another analyst to verify any resolved/ignored checks.
+- Ignore and resolve functionality. Analysts are responsible for compliance issues, so they need to be able to act on documents in review. This could include adding comments, modifying the document, etc. Due to a conservative scope on the objective and time consideration, this was not implemented but certain pieces were visualized.
+- Once checks are ignored or resolved, there should be some approval process. This means some documents may be in a status of _Review_, meaning acting on any failed checks, or in a status of _Needing Approval_ for another analyst to verify any resolved/ignored checks.
 - Quality of life improvements:
   - Clicking a failing node in the left panel should zoom into the respective node in the right panel
   - Hotkeys for action items such as ignoring and resolving
 - Design questions: a few thoughts emerged during design that I did not fully flesh out
-  - Is a tree structure the best way to visualize compliance checks? E.g. what about Notion-like pages, clicking into a sub-tree will replace the right panel and the user can go back or deeper as needed
-  - If a document passes compliance, should we skip or should their be some sort of verification process?
+  - Is a tree structure the best way to visualize compliance checks? E.g., what about Notion-like pages, clicking into a sub-tree will replace the right panel and the user can go back or deeper as needed.
+  - If a document passes compliance, should we skip or should there be some verification process?
 
 ## Reflective Response
 
