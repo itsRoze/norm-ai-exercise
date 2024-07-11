@@ -1,6 +1,6 @@
 # Norm AI Product Engineer Exercise
 
- The Norm AI product is an agentic copilot for regulatory compliance teams. The objective of this exercise was to build a frontend view for a compliance analyst that visualizes the results of an AI-created compliance analysis on a document.
+The Norm AI product is an agentic copilot for regulatory compliance teams. The objective of this exercise was to build a frontend view for a compliance analyst that visualizes the results of an AI-created compliance analysis on a document.
 
 ![Screenshot of Frontend](screenshot.png)
 
@@ -11,7 +11,7 @@ pnpm i
 ```
 
 ```shell
-
+pnpm dev
 ```
 
 ## High-level Overview
@@ -51,7 +51,7 @@ Resources used
 ## Considered, But Not Implemented
 
 - Ignore and resolve functionality. Analysts are responsible for complicance issues so they need to be able to act on ducments in review. This could include being able to add comments, modify the document, etc. Due to a conservative scope on the objective and time consideration, this was not implemented but certain pieces were visualized.
-- Once checks are ignored or resolved, their should be some approval process. This means some documents may be in a status of *Review* meaning acting on any failed checks or in a status of *Needing Approval* for another analyst to verify any resolved/ignored checks.
+- Once checks are ignored or resolved, their should be some approval process. This means some documents may be in a status of _Review_ meaning acting on any failed checks or in a status of _Needing Approval_ for another analyst to verify any resolved/ignored checks.
 - Quality of life improvements:
   - Clicking a failing node in the left panel should zoom into the respective node in the right panel
   - Hotkeys for action items such as ignoring and resolving
